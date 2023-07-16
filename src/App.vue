@@ -76,6 +76,23 @@ export default {
                     email: "",
                 }
             );
+            // Generate the third event's dates dynamically based on this.startDate
+            const startDate3 = subWeeks(new Date(this.startDate), 6);
+            const endDate3 = subWeeks(new Date(this.startDate), 6);
+
+            this.$ics.addEvent(
+                "en-us",
+                "James 2",
+                "",
+                "",
+                startDate3,
+                endDate3,
+                "",
+                {
+                    name: "Marilyn Stewart",
+                    email: "",
+                }
+            );
 
             this.$ics.download("James");
         },
