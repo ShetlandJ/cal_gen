@@ -24,7 +24,6 @@
             </label>
 
             <a href="#" @click="generate">Generate</a>
-            <!-- <a href="#" onclick="javascript:cal.download('Back date')">Generate</a> -->
         </div>
     </div>
 </template>
