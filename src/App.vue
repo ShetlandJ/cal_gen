@@ -111,7 +111,7 @@ export default {
                 }
             );
 
-            this.$ics.download("James");
+            this.$ics.download("calendar_events");
         },
     },
 };
