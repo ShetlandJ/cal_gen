@@ -47,7 +47,7 @@ export default {
 
             this.$ics.addEvent(
                 "en-us",
-                "James",
+                this.eventName,
                 "",
                 "",
                 this.startDate,
@@ -65,7 +65,7 @@ export default {
 
             this.$ics.addEvent(
                 "en-us",
-                "James 2",
+                this.eventName,
                 "",
                 "",
                 startDate2,
@@ -76,13 +76,13 @@ export default {
                     email: "",
                 }
             );
-            // Generate the third event's dates dynamically based on this.startDate
+
             const startDate3 = subWeeks(new Date(this.startDate), 4);
             const endDate3 = subWeeks(new Date(this.startDate), 4);
 
             this.$ics.addEvent(
                 "en-us",
-                "James 2",
+                this.eventName,
                 "",
                 "",
                 startDate3,
@@ -93,13 +93,13 @@ export default {
                     email: "",
                 }
             );
-            // Generate the third event's dates dynamically based on this.startDate
+
             const startDate4 = subWeeks(new Date(this.startDate), 6);
             const endDate4 = subWeeks(new Date(this.startDate), 6);
 
             this.$ics.addEvent(
                 "en-us",
-                "James 2",
+                this.eventName,
                 "",
                 "",
                 startDate4,
