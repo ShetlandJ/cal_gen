@@ -77,8 +77,8 @@ export default {
                 }
             );
             // Generate the third event's dates dynamically based on this.startDate
-            const startDate3 = subWeeks(new Date(this.startDate), 6);
-            const endDate3 = subWeeks(new Date(this.startDate), 6);
+            const startDate3 = subWeeks(new Date(this.startDate), 4);
+            const endDate3 = subWeeks(new Date(this.startDate), 4);
 
             this.$ics.addEvent(
                 "en-us",
@@ -87,6 +87,23 @@ export default {
                 "",
                 startDate3,
                 endDate3,
+                "",
+                {
+                    name: "Marilyn Stewart",
+                    email: "",
+                }
+            );
+            // Generate the third event's dates dynamically based on this.startDate
+            const startDate4 = subWeeks(new Date(this.startDate), 6);
+            const endDate4 = subWeeks(new Date(this.startDate), 6);
+
+            this.$ics.addEvent(
+                "en-us",
+                "James 2",
+                "",
+                "",
+                startDate4,
+                endDate4,
                 "",
                 {
                     name: "Marilyn Stewart",
