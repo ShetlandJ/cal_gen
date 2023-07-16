@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { subWeeks } from "date-fns";
+import { subWeeks, setMinutes, setHours } from "date-fns";
 
 export default {
     name: "App",
@@ -37,13 +37,13 @@ export default {
         return {
             eventName: "",
             startDate: new Date(),
+            endDate: new Date(),
         };
     },
     methods: {
         generate() {
-            // Generate the start and end dates dynamically using this.startDate
-            // const startDate = setMinutes(setHours(this.startDate, 8), 0);
-            // const endDate = setMinutes(setHours(this.startDate, 9), 0);
+            this.startDate = setMinutes(setHours(new Date(this.startDate), 8), 0);
+            this.endDate = setMinutes(setHours(new Date(this.startDate), 8), 30);
 
             this.$ics.addEvent(
                 "en-us",
@@ -51,7 +51,7 @@ export default {
                 "",
                 "",
                 this.startDate,
-                this.startDate,
+                this.endDate,
                 "",
                 {
                     name: "Marilyn Stewart",
@@ -61,7 +61,7 @@ export default {
 
             // Generate the second event's dates dynamically based on this.startDate
             const startDate2 = subWeeks(new Date(this.startDate), 2);
-            const endDate2 = subWeeks(new Date(this.startDate), 2);
+            const endDate2 = subWeeks(new Date(this.endDate), 2);
 
             this.$ics.addEvent(
                 "en-us",
@@ -78,7 +78,7 @@ export default {
             );
 
             const startDate3 = subWeeks(new Date(this.startDate), 4);
-            const endDate3 = subWeeks(new Date(this.startDate), 4);
+            const endDate3 = subWeeks(new Date(this.endDate), 4);
 
             this.$ics.addEvent(
                 "en-us",
@@ -95,7 +95,7 @@ export default {
             );
 
             const startDate4 = subWeeks(new Date(this.startDate), 6);
-            const endDate4 = subWeeks(new Date(this.startDate), 6);
+            const endDate4 = subWeeks(new Date(this.endDate), 6);
 
             this.$ics.addEvent(
                 "en-us",
